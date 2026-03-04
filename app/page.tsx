@@ -100,59 +100,61 @@ export default function Home() {
         </header>
 
         <section className="py-10 lg:py-14">
-          <div className="relative mx-auto max-w-5xl rounded-[2.6rem] border border-[color:var(--line)] bg-white/80 p-7 shadow-[0_24px_70px_rgba(183,115,129,0.08)] backdrop-blur sm:p-10">
-            <div className="absolute right-6 top-8 h-24 w-24 rounded-full bg-[#f4d8e0]/60 blur-2xl" />
+          <div className="relative mx-auto max-w-5xl rounded-[2.6rem] border border-[color:var(--line)] p-7 shadow-[0_24px_70px_rgba(183,115,129,0.08)] sm:p-10">
+              <div className="absolute right-6 top-8 h-24 w-24 rounded-full bg-[#f4d8e0]/60 blur-2xl" />
 
-            <div className="relative grid gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--line)] bg-white px-4 py-2 text-xs font-medium uppercase tracking-[0.24em] text-[color:var(--muted)]">
-                  <span className="inline-block h-2 w-2 rounded-full bg-[color:var(--accent)]" />
-                  Barbara Studio
+              <div className="relative grid gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-center">
+                <div>
+                  <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--line)] bg-white px-4 py-2 text-xs font-medium uppercase tracking-[0.24em] text-[color:var(--muted)]">
+                    <span className="inline-block h-2 w-2 rounded-full bg-[color:var(--accent)]" />
+                    Barbara Studio
+                  </div>
+                  <h1 className="mx-auto mt-7 max-w-2xl bg-[linear-gradient(120deg,_#b67381_0%,_#d798a5_45%,_#e9b9c5_100%)] bg-clip-text text-center font-[family:var(--font-cormorant)] text-6xl leading-[0.92] font-bold tracking-tight text-transparent sm:text-7xl">
+                    The Art of beauty
+                  </h1>
+                  <div className="mx-auto mt-6 max-w-3xl">
+                    <p className="text-center text-base leading-8 text-[color:var(--ink-soft)]">
+                      Beauty is the art of enhancing what is already there — refining,
+                      shaping, and illuminating natural features with intention and care.
+                    </p>
+                    <p className="mt-3 text-center text-base leading-8 text-[color:var(--ink-soft)]">
+                      Through precision, balance, and softness, true beauty creates confidence
+                      that feels effortless and uniquely yours.
+                    </p>
+                  </div>
+
+                  <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
+                    <a
+                      href="#contact"
+                      className="inline-flex items-center justify-center rounded-full bg-[color:var(--accent-deep)] px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white hover:-translate-y-0.5 hover:bg-[color:var(--accent)]"
+                    >
+                      Book now
+                    </a>
+                    <a
+                      href="#services"
+                      className="inline-flex items-center justify-center rounded-full border border-[color:var(--line)] bg-white px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--foreground)] hover:-translate-y-0.5 hover:bg-[#fff7f9]"
+                    >
+                      View services
+                    </a>
+                  </div>
                 </div>
-                <h1 className="mx-auto mt-7 max-w-2xl text-center font-[family:var(--font-cormorant)] text-6xl leading-[0.94] font-semibold tracking-tight text-[color:var(--foreground)] sm:text-7xl">
-                  The Art of beauty
-                </h1>
-                <p className="mx-auto mt-5 max-w-2xl text-center text-base leading-8 text-[color:var(--ink-soft)]">
-                  Beauty is the art of enhancing what is already there — refining, shaping,
-                  and illuminating natural features with intention and care.
-                </p>
-                <p className="mx-auto mt-3 max-w-2xl text-center text-base leading-8 text-[color:var(--ink-soft)]">
-                  Through precision, balance, and softness, true beauty creates confidence
-                  that feels effortless and uniquely yours.
-                </p>
 
-                <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                  <a
-                    href="#contact"
-                    className="inline-flex items-center justify-center rounded-full bg-[color:var(--accent-deep)] px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white hover:-translate-y-0.5 hover:bg-[color:var(--accent)]"
-                  >
-                    Book now
-                  </a>
-                  <a
-                    href="#services"
-                    className="inline-flex items-center justify-center rounded-full border border-[color:var(--line)] bg-white px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--foreground)] hover:-translate-y-0.5 hover:bg-[#fff7f9]"
-                  >
-                    View services
-                  </a>
-                </div>
-              </div>
-
-              <div className="rounded-2xl border border-[color:var(--line)] bg-white/85 p-4">
-                <div className="grid gap-4 sm:grid-cols-2">
-                  <figure className="rounded-2xl border border-[color:var(--line)] bg-[#fff7f9] p-4">
-                    <svg viewBox="0 0 160 110" className="h-28 w-full" aria-label="Lashes illustration">
-                      <path d="M22 74 Q80 34 138 74" fill="none" stroke="#b67381" strokeWidth="3" strokeLinecap="round" />
-                      <path d="M40 70 L33 58" stroke="#d798a5" strokeWidth="2.4" strokeLinecap="round" />
-                      <path d="M56 63 L51 48" stroke="#d798a5" strokeWidth="2.4" strokeLinecap="round" />
-                      <path d="M74 58 L74 42" stroke="#d798a5" strokeWidth="2.4" strokeLinecap="round" />
-                      <path d="M92 58 L97 44" stroke="#d798a5" strokeWidth="2.4" strokeLinecap="round" />
-                      <path d="M110 63 L118 50" stroke="#d798a5" strokeWidth="2.4" strokeLinecap="round" />
-                      <path d="M126 70 L134 58" stroke="#d798a5" strokeWidth="2.4" strokeLinecap="round" />
-                    </svg>
-                    <figcaption className="mt-2 text-xs font-semibold uppercase tracking-[0.26em] text-[color:var(--accent-deep)]">
-                      Lashes
-                    </figcaption>
-                  </figure>
+                <div className="rounded-2xl border border-[color:var(--line)] bg-white/85 p-4">
+                  <div className="grid gap-4 sm:grid-cols-2">
+                    <figure className="rounded-2xl border border-[color:var(--line)] bg-[#fff7f9] p-4">
+                      <svg viewBox="0 0 160 110" className="h-28 w-full" aria-label="Lashes illustration">
+                        <path d="M22 74 Q80 34 138 74" fill="none" stroke="#b67381" strokeWidth="3" strokeLinecap="round" />
+                        <path d="M40 70 L33 58" stroke="#d798a5" strokeWidth="2.4" strokeLinecap="round" />
+                        <path d="M56 63 L51 48" stroke="#d798a5" strokeWidth="2.4" strokeLinecap="round" />
+                        <path d="M74 58 L74 42" stroke="#d798a5" strokeWidth="2.4" strokeLinecap="round" />
+                        <path d="M92 58 L97 44" stroke="#d798a5" strokeWidth="2.4" strokeLinecap="round" />
+                        <path d="M110 63 L118 50" stroke="#d798a5" strokeWidth="2.4" strokeLinecap="round" />
+                        <path d="M126 70 L134 58" stroke="#d798a5" strokeWidth="2.4" strokeLinecap="round" />
+                      </svg>
+                      <figcaption className="mt-2 text-xs font-semibold uppercase tracking-[0.26em] text-[color:var(--accent-deep)]">
+                        Lashes
+                      </figcaption>
+                    </figure>
 
                   <figure className="rounded-2xl border border-[color:var(--line)] bg-white p-4">
                     <svg viewBox="0 0 160 110" className="h-28 w-full" aria-label="Nails illustration">
@@ -191,9 +193,9 @@ export default function Home() {
                       Eyebrows
                     </figcaption>
                   </figure>
+                  </div>
                 </div>
               </div>
-            </div>
           </div>
         </section>
       </section>
