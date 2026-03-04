@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="lashBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff8fa"/>
+      <stop offset="100%" stop-color="#fceff4"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="36" fill="url(#lashBg)"/>
+  <circle cx="640" cy="130" r="72" fill="#f1d6de" opacity=".55"/>
+  <path d="M120 285C240 180 560 180 680 285" stroke="#b67381" stroke-width="10" stroke-linecap="round"/>
+  <path d="M170 265L145 220" stroke="#d798a5" stroke-width="7" stroke-linecap="round"/>
+  <path d="M220 240L205 190" stroke="#d798a5" stroke-width="7" stroke-linecap="round"/>
+  <path d="M275 223L275 172" stroke="#d798a5" stroke-width="7" stroke-linecap="round"/>
+  <path d="M335 212L348 163" stroke="#d798a5" stroke-width="7" stroke-linecap="round"/>
+  <path d="M400 206L430 160" stroke="#d798a5" stroke-width="7" stroke-linecap="round"/>
+  <path d="M470 210L510 170" stroke="#d798a5" stroke-width="7" stroke-linecap="round"/>
+  <path d="M540 224L585 190" stroke="#d798a5" stroke-width="7" stroke-linecap="round"/>
+  <path d="M610 250L655 225" stroke="#d798a5" stroke-width="7" stroke-linecap="round"/>
+  <path d="M265 330C335 370 465 370 535 330" stroke="#c7a567" stroke-width="6" stroke-linecap="round"/>
+</svg>

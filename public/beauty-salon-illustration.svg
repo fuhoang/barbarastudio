@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <defs>
+    <linearGradient id="canvas" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.92"/>
+      <stop offset="100%" stop-color="#f9eef2" stop-opacity="0.88"/>
+    </linearGradient>
+    <linearGradient id="goldRose" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d9bb73"/>
+      <stop offset="100%" stop-color="#b67381"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#canvas)"/>
+
+  <g opacity="0.2">
+    <circle cx="220" cy="170" r="120" fill="#f2dce3"/>
+    <circle cx="1380" cy="220" r="140" fill="#f4e4c7"/>
+    <circle cx="1260" cy="760" r="110" fill="#efd3db"/>
+  </g>
+
+  <g opacity="0.4" stroke="#b67381" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M120 720H1480"/>
+    <path d="M230 720V250H540V720"/>
+    <path d="M1060 720V250H1370V720"/>
+    <rect x="275" y="300" width="220" height="280" rx="28"/>
+    <rect x="1105" y="300" width="220" height="280" rx="28"/>
+    <path d="M340 580V645M430 580V645"/>
+    <path d="M1170 580V645M1260 580V645"/>
+  </g>
+
+  <g opacity="0.42" stroke="#d798a5" stroke-width="2" stroke-linecap="round">
+    <ellipse cx="800" cy="315" rx="210" ry="105"/>
+    <path d="M640 380H960"/>
+    <path d="M650 410H950"/>
+    <path d="M675 440H925"/>
+  </g>
+
+  <g opacity="0.46">
+    <path d="M730 560C730 520 760 490 800 490C840 490 870 520 870 560V660H730V560Z" fill="none" stroke="url(#goldRose)" stroke-width="3"/>
+    <path d="M760 660V720M840 660V720" stroke="url(#goldRose)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M705 720H895" stroke="url(#goldRose)" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <g opacity="0.38" stroke="#b67381" stroke-width="1.8" stroke-linecap="round">
+    <path d="M330 220V170M360 220V182M390 220V176"/>
+    <path d="M1210 220V170M1240 220V182M1270 220V176"/>
+    <path d="M760 205V164M790 205V176M820 205V168"/>
+  </g>
+</svg>

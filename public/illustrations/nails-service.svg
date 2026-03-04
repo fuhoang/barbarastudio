@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" fill="none">
+  <defs>
+    <linearGradient id="nailsBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff8fa"/>
+      <stop offset="100%" stop-color="#fdeff3"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" rx="36" fill="url(#nailsBg)"/>
+  <circle cx="640" cy="110" r="68" fill="#f4d8e1" opacity=".6"/>
+  <rect x="120" y="185" width="92" height="190" rx="46" fill="#f7dbe3" stroke="#d798a5" stroke-width="5"/>
+  <rect x="230" y="150" width="92" height="225" rx="46" fill="#f4cfda" stroke="#d798a5" stroke-width="5"/>
+  <rect x="340" y="130" width="92" height="245" rx="46" fill="#efc2cf" stroke="#d798a5" stroke-width="5"/>
+  <rect x="450" y="155" width="92" height="220" rx="46" fill="#f9e8ed" stroke="#d798a5" stroke-width="5"/>
+  <rect x="560" y="190" width="92" height="185" rx="46" fill="#fff2f5" stroke="#d798a5" stroke-width="5"/>
+  <path d="M90 392C210 438 590 438 710 392" stroke="#b67381" stroke-width="8" stroke-linecap="round"/>
+</svg>
