@@ -112,6 +112,14 @@ export default function Home() {
                 <h1 className="mx-auto mt-7 max-w-2xl text-center font-[family:var(--font-cormorant)] text-6xl leading-[0.94] font-semibold tracking-tight text-[color:var(--foreground)] sm:text-7xl">
                   The Art of beauty
                 </h1>
+                <p className="mx-auto mt-5 max-w-2xl text-center text-base leading-8 text-[color:var(--ink-soft)]">
+                  Beauty is the art of enhancing what is already there — refining, shaping,
+                  and illuminating natural features with intention and care.
+                </p>
+                <p className="mx-auto mt-3 max-w-2xl text-center text-base leading-8 text-[color:var(--ink-soft)]">
+                  Through precision, balance, and softness, true beauty creates confidence
+                  that feels effortless and uniquely yours.
+                </p>
 
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row">
                   <a
