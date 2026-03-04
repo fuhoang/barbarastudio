@@ -1,5 +1,6 @@
 import DotGrid from "@/components/DotGrid";
 import Image from "next/image";
+import BlurText from "@/components/BlurText";
 
 export default function Home() {
   const serviceCategories = [
@@ -187,9 +188,12 @@ export default function Home() {
                     <span className="inline-block h-2 w-2 rounded-full bg-[color:var(--accent)]" />
                     Barbara Studio
                   </div>
-                  <h1 className="mx-auto mt-7 max-w-2xl bg-[linear-gradient(120deg,_#b67381_0%,_#d798a5_45%,_#e9b9c5_100%)] bg-clip-text text-center font-[family:var(--font-cormorant)] text-6xl leading-[0.92] font-bold tracking-tight text-transparent sm:text-7xl">
-                    The Art of beauty
-                  </h1>
+                  <BlurText
+                    text="The Art of beauty"
+                    animateBy="words"
+                    delay={180}
+                    className="mx-auto mt-7 max-w-2xl justify-center text-center font-[family:var(--font-cormorant)] text-6xl leading-[0.92] font-bold tracking-tight text-[color:var(--accent-deep)] sm:text-7xl"
+                  />
                   <div className="mx-auto mt-6 max-w-3xl">
                     <p className="text-center text-base leading-8 text-[color:var(--ink-soft)]">
                       Beauty is the art of enhancing what is already there — refining,
