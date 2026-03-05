@@ -8,7 +8,7 @@ describe("ContactSection", () => {
     render(<ContactSection ui={uiByLanguage.es} />);
 
     expect(screen.getByText("Reservas")).toBeInTheDocument();
-    expect(screen.getByText("Llamar 00 0000 0000")).toBeInTheDocument();
+    expect(screen.getByText(uiByLanguage.es.callLabel)).toBeInTheDocument();
     expect(screen.getByLabelText("Correo")).toBeInTheDocument();
   });
 });
