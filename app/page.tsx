@@ -4,7 +4,7 @@ import { useState } from "react";
 import DotGrid from "@/components/DotGrid";
 import { ContactSection } from "@/components/home/contact-section";
 import { HeroSection } from "@/components/home/hero-section";
-import { serviceCategories, testimonialsByLanguage, uiByLanguage } from "@/components/home/content";
+import { serviceCategoriesByLanguage, testimonialsByLanguage, uiByLanguage } from "@/components/home/content";
 import { ServicesSection } from "@/components/home/services-section";
 import { SiteHeader } from "@/components/home/site-header";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
@@ -13,6 +13,7 @@ import type { Language } from "@/components/home/types";
 export default function Home() {
   const [language, setLanguage] = useState<Language>("es");
   const ui = uiByLanguage[language];
+  const localizedServiceCategories = serviceCategoriesByLanguage[language];
   const localizedTestimonials = testimonialsByLanguage[language];
 
   return (
@@ -41,7 +42,7 @@ export default function Home() {
         <HeroSection ui={ui} />
       </section>
 
-      <ServicesSection ui={ui} categories={serviceCategories} />
+      <ServicesSection ui={ui} categories={localizedServiceCategories} />
       <TestimonialsSection ui={ui} testimonials={localizedTestimonials} />
       <ContactSection ui={ui} />
     </main>
