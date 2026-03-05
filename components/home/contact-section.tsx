@@ -21,20 +21,20 @@ export function ContactSection({ ui }: { ui: UiCopy }) {
 
         <div className="mt-8 flex flex-col gap-3 text-sm sm:max-w-sm lg:mt-0 lg:min-w-80">
           <a
-            href="tel:+440000000000"
+            href="tel:04241257083"
             className="rounded-full bg-white px-6 py-4 text-center font-semibold uppercase tracking-[0.18em] text-[color:var(--accent-deep)] hover:-translate-y-0.5"
           >
             {ui.callLabel}
           </a>
           <a
-            href="mailto:hello@barbarastudio.co.uk"
+            href="mailto:Barbaracolmenares4@gmail.com"
             className="rounded-full border border-white/30 px-6 py-4 text-center font-semibold uppercase tracking-[0.18em] text-white hover:-translate-y-0.5 hover:bg-white/10"
           >
-            hello@barbarastudio.co.uk
+            Barbaracolmenares4@gmail.com
           </a>
           <div className="mt-1 flex items-center justify-center gap-3 sm:justify-start">
             <a
-              href="mailto:hello@barbarastudio.co.uk"
+              href="mailto:Barbaracolmenares4@gmail.com"
               aria-label={ui.emailAria}
               className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/35 text-white transition hover:-translate-y-0.5 hover:bg-white/12"
             >
@@ -44,7 +44,7 @@ export function ContactSection({ ui }: { ui: UiCopy }) {
               </svg>
             </a>
             <a
-              href="https://www.instagram.com/"
+              href="https://www.instagram.com/Barbyeal.studio"
               target="_blank"
               rel="noreferrer"
               aria-label={ui.instagramAria}
@@ -57,7 +57,7 @@ export function ContactSection({ ui }: { ui: UiCopy }) {
               </svg>
             </a>
             <a
-              href="https://wa.me/440000000000"
+              href="https://wa.me/584241257083"
               target="_blank"
               rel="noreferrer"
               aria-label={ui.whatsappAria}

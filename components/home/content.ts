@@ -303,7 +303,7 @@ export const uiByLanguage: Record<Language, UiCopy> = {
     contactHeadline: "Luce impecable. Siéntete natural.",
     contactDescription:
       "Citas de martes a sábado, consultas personalizadas y planes de tratamiento adaptados a tu agenda.",
-    callLabel: "Llamar 00 0000 0000",
+    callLabel: "Llamar 04241257083",
     emailAria: "Correo",
     instagramAria: "Instagram",
     whatsappAria: "WhatsApp",
@@ -332,7 +332,7 @@ export const uiByLanguage: Record<Language, UiCopy> = {
     contactHeadline: "Stay polished. Stay effortless.",
     contactDescription:
       "Tuesday to Saturday appointments, bespoke consultations, and treatment plans built around your schedule.",
-    callLabel: "Call 00 0000 0000",
+    callLabel: "Call 04241257083",
     emailAria: "Email",
     instagramAria: "Instagram",
     whatsappAria: "WhatsApp",
