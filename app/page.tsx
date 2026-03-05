@@ -1,8 +1,14 @@
+"use client";
+
 import DotGrid from "@/components/DotGrid";
 import Image from "next/image";
 import BlurText from "@/components/BlurText";
+import { useState } from "react";
 
 export default function Home() {
+  const [language, setLanguage] = useState<"en" | "es">("es");
+  const isSpanish = language === "es";
+
   const serviceCategories = [
     {
       title: "Nails Services",
@@ -141,6 +147,137 @@ export default function Home() {
     },
   ];
 
+  const ui = isSpanish
+    ? {
+        brandSubtitle: "Tratamientos de belleza estética",
+        navServices: "Servicios",
+        navBookNow: "Reservar",
+        heroHeadline: "El Arte de la belleza",
+        heroParagraphOne:
+          "La belleza es el arte de realzar lo que ya está presente: perfilar, definir e iluminar los rasgos naturales con intención y cuidado.",
+        heroParagraphTwo:
+          "A través de precisión, equilibrio y suavidad, la verdadera belleza crea una confianza que se siente natural y única.",
+        heroBookNow: "Reservar",
+        heroViewServices: "Ver servicios",
+        lashesLabel: "Pestañas",
+        nailsLabel: "Uñas",
+        hairLabel: "Cabello",
+        browsLabel: "Cejas",
+        treatmentsLabel: "Tratamientos",
+        servicesHeadline: "Belleza detallista, adaptada a tus rasgos.",
+        servicesDescription:
+          "Cada servicio se diseña con preparación impecable, forma precisa y resultados duraderos para elevar tu rutina diaria.",
+        testimonialsHeading: "Testimonios",
+        bookingsLabel: "Reservas",
+        contactHeadline: "Luce impecable. Siéntete natural.",
+        contactDescription:
+          "Citas de martes a sábado, consultas personalizadas y planes de tratamiento adaptados a tu agenda.",
+        callLabel: "Llamar 00 0000 0000",
+        emailAria: "Correo",
+        instagramAria: "Instagram",
+        whatsappAria: "WhatsApp",
+      }
+    : {
+        brandSubtitle: "Aesthetic beauty treatments",
+        navServices: "Services",
+        navBookNow: "Book now",
+        heroHeadline: "The Art of beauty",
+        heroParagraphOne:
+          "Beauty is the art of enhancing what is already there — refining, shaping, and illuminating natural features with intention and care.",
+        heroParagraphTwo:
+          "Through precision, balance, and softness, true beauty creates confidence that feels effortless and uniquely yours.",
+        heroBookNow: "Book now",
+        heroViewServices: "View services",
+        lashesLabel: "Lashes",
+        nailsLabel: "Nails",
+        hairLabel: "Hair",
+        browsLabel: "Eyebrows",
+        treatmentsLabel: "Treatments",
+        servicesHeadline: "Detail-led beauty, tailored to your features.",
+        servicesDescription:
+          "Each service is built around clean prep, considered shaping, and long-wear results that elevate your everyday routine.",
+        testimonialsHeading: "Testimonials",
+        bookingsLabel: "Bookings",
+        contactHeadline: "Stay polished. Stay effortless.",
+        contactDescription:
+          "Tuesday to Saturday appointments, bespoke consultations, and treatment plans built around your schedule.",
+        callLabel: "Call 00 0000 0000",
+        emailAria: "Email",
+        instagramAria: "Instagram",
+        whatsappAria: "WhatsApp",
+      };
+
+  const localizedTestimonials = isSpanish
+    ? [
+        {
+          quote:
+            "Todo se siente pulido, tranquilo y cuidadosamente detallado de principio a fin.",
+          name: "Ava",
+        },
+        {
+          quote:
+            "Mis cejas se mantienen definidas y elevadas, con un resultado suave y nada exagerado.",
+          name: "Nadia",
+        },
+        {
+          quote:
+            "Mis pestañas duraron precioso y se sintieron ligeras, suaves y cómodas cada día.",
+          name: "Sofia",
+        },
+        {
+          quote:
+            "La forma y el acabado de mis uñas fueron impecables, y toda la cita fue privada y relajante.",
+          name: "Mila",
+        },
+      ]
+    : testimonials;
+
+  const BrandLogo = ({ compact = false }: { compact?: boolean }) => (
+    <div className={`inline-flex items-center ${compact ? "gap-2.5" : "gap-3.5"}`}>
+      <span
+        className={`inline-flex items-center justify-center rounded-full border border-[color:var(--line)] bg-white ${
+          compact ? "h-8 w-8" : "h-10 w-10"
+        }`}
+      >
+        <svg
+          viewBox="0 0 64 64"
+          className={compact ? "h-5 w-5" : "h-6 w-6"}
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M32 52c7-6 12-12 12-19 0-5-4-8-8-8-2 0-4 .8-5.5 2.3L32 29l-2.5-1.7C28 25.8 26 25 24 25c-4 0-8 3-8 8 0 7 5 13 16 19Z"
+            fill="#f4d6de"
+            stroke="#b67381"
+            strokeWidth="1.8"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M32 29c1.7-2.5 4.6-4 8-4 1.5 0 2.8.3 4 .9M32 29c-1.7-2.5-4.6-4-8-4-1.5 0-2.8.3-4 .9"
+            stroke="#d798a5"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+          <path
+            d="M32 29v23M32 44c-2.8-1.5-5.5-3.5-7.5-5.8M32 44c2.8-1.5 5.5-3.5 7.5-5.8"
+            stroke="#b67381"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+        </svg>
+      </span>
+      <span
+        className={`font-[family:var(--font-cormorant)] text-[color:var(--accent-deep)] ${
+          compact
+            ? "text-sm font-medium tracking-[0.14em]"
+            : "text-[1.05rem] font-medium tracking-[0.16em]"
+        }`}
+      >
+        Barbara Studio
+      </span>
+    </div>
+  );
+
   return (
     <main className="relative overflow-hidden">
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.92),_transparent_34%),radial-gradient(circle_at_85%_20%,_rgba(244,238,233,0.9),_transparent_30%),linear-gradient(135deg,_#faf7f5_0%,_#f7f2ee_46%,_#f3eeea_100%)]" />
@@ -165,11 +302,9 @@ export default function Home() {
       <section className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 pb-12 pt-6 sm:px-10 lg:px-16">
         <header className="flex flex-wrap items-center justify-between gap-4 border-b border-[color:var(--line)] pb-5">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--muted)]">
-              Barbara Studio
-            </p>
+            <BrandLogo />
             <p className="mt-1 text-sm text-[color:var(--ink-soft)]">
-              Aesthetic beauty treatments
+              {ui.brandSubtitle}
             </p>
           </div>
           <nav className="flex flex-wrap items-center gap-4 text-sm text-[color:var(--ink-soft)] sm:gap-6">
@@ -177,14 +312,38 @@ export default function Home() {
               href="#services"
               className="hover:text-[color:var(--accent-deep)]"
             >
-              Services
+              {ui.navServices}
             </a>
             <a
               href="#contact"
               className="rounded-full border border-[color:var(--line)] px-4 py-2 hover:border-[color:var(--accent)] hover:bg-white/60"
             >
-              Book now
+              {ui.navBookNow}
             </a>
+            <div className="ml-1 inline-flex rounded-full border border-[color:var(--line)] bg-white p-1">
+              <button
+                type="button"
+                onClick={() => setLanguage("en")}
+                className={`rounded-full px-3 py-1 text-xs font-semibold tracking-[0.12em] ${
+                  language === "en"
+                    ? "bg-[color:var(--accent-deep)] text-white"
+                    : "text-[color:var(--ink-soft)]"
+                }`}
+              >
+                EN
+              </button>
+              <button
+                type="button"
+                onClick={() => setLanguage("es")}
+                className={`rounded-full px-3 py-1 text-xs font-semibold tracking-[0.12em] ${
+                  language === "es"
+                    ? "bg-[color:var(--accent-deep)] text-white"
+                    : "text-[color:var(--ink-soft)]"
+                }`}
+              >
+                ES
+              </button>
+            </div>
           </nav>
         </header>
 
@@ -194,24 +353,21 @@ export default function Home() {
 
               <div className="relative grid gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-center">
                 <div>
-                  <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--line)] bg-white px-4 py-2 text-xs font-medium uppercase tracking-[0.24em] text-[color:var(--muted)]">
-                    <span className="inline-block h-2 w-2 rounded-full bg-[color:var(--accent)]" />
-                    Barbara Studio
+                  <div className="inline-flex items-center rounded-full border border-[color:var(--line)] bg-white px-3 py-2">
+                    <BrandLogo compact />
                   </div>
                   <BlurText
-                    text="The Art of beauty"
+                    text={ui.heroHeadline}
                     animateBy="words"
                     delay={180}
                     className="mx-auto mt-7 max-w-2xl justify-center text-center font-[family:var(--font-cormorant)] text-6xl leading-[0.92] font-bold tracking-tight text-[color:var(--accent-deep)] sm:text-7xl"
                   />
                   <div className="mx-auto mt-6 max-w-3xl">
                     <p className="text-center text-base leading-8 text-[color:var(--ink-soft)]">
-                      Beauty is the art of enhancing what is already there — refining,
-                      shaping, and illuminating natural features with intention and care.
+                      {ui.heroParagraphOne}
                     </p>
                     <p className="mt-3 text-center text-base leading-8 text-[color:var(--ink-soft)]">
-                      Through precision, balance, and softness, true beauty creates confidence
-                      that feels effortless and uniquely yours.
+                      {ui.heroParagraphTwo}
                     </p>
                   </div>
 
@@ -220,13 +376,13 @@ export default function Home() {
                       href="#contact"
                       className="inline-flex items-center justify-center rounded-full bg-[color:var(--accent-deep)] px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white hover:-translate-y-0.5 hover:bg-[color:var(--accent)]"
                     >
-                      Book now
+                      {ui.heroBookNow}
                     </a>
                     <a
                       href="#services"
                       className="inline-flex items-center justify-center rounded-full border border-[color:var(--line)] bg-white px-7 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--foreground)] hover:-translate-y-0.5 hover:bg-[#fff7f9]"
                     >
-                      View services
+                      {ui.heroViewServices}
                     </a>
                   </div>
                 </div>
@@ -244,7 +400,7 @@ export default function Home() {
                         <path d="M126 70 L134 58" stroke="#d798a5" strokeWidth="2.4" strokeLinecap="round" />
                       </svg>
                       <figcaption className="mt-2 text-xs font-semibold uppercase tracking-[0.26em] text-[color:var(--accent-deep)]">
-                        Lashes
+                        {ui.lashesLabel}
                       </figcaption>
                     </figure>
 
@@ -257,7 +413,7 @@ export default function Home() {
                       <path d="M18 87 Q80 102 142 87" fill="none" stroke="#b67381" strokeWidth="2.5" strokeLinecap="round" />
                     </svg>
                     <figcaption className="mt-2 text-xs font-semibold uppercase tracking-[0.26em] text-[color:var(--accent-deep)]">
-                      Nails
+                      {ui.nailsLabel}
                     </figcaption>
                   </figure>
 
@@ -269,7 +425,7 @@ export default function Home() {
                       <path d="M103 44 Q112 60 113 92" fill="none" stroke="#b67381" strokeWidth="2.2" strokeLinecap="round" />
                     </svg>
                     <figcaption className="mt-2 text-xs font-semibold uppercase tracking-[0.26em] text-[color:var(--accent-deep)]">
-                      Hair
+                      {ui.hairLabel}
                     </figcaption>
                   </figure>
 
@@ -282,7 +438,7 @@ export default function Home() {
                       <circle cx="80" cy="76" r="3" fill="#d798a5" />
                     </svg>
                     <figcaption className="mt-2 text-xs font-semibold uppercase tracking-[0.26em] text-[color:var(--accent-deep)]">
-                      Eyebrows
+                      {ui.browsLabel}
                     </figcaption>
                   </figure>
                   </div>
@@ -296,14 +452,13 @@ export default function Home() {
         <div className="mx-auto max-w-7xl rounded-[2rem] border border-[color:var(--line)] bg-white/75 p-6 shadow-[0_14px_36px_rgba(183,115,129,0.06)] sm:p-8 lg:p-10">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--muted)]">
-              Treatments
+              {ui.treatmentsLabel}
             </p>
             <h2 className="mt-4 bg-[linear-gradient(120deg,_#b67381_0%,_#d798a5_45%,_#e9b9c5_100%)] bg-clip-text font-[family:var(--font-cormorant)] text-5xl leading-tight font-semibold text-transparent sm:text-6xl">
-              Detail-led beauty, tailored to your features.
+              {ui.servicesHeadline}
             </h2>
             <p className="mt-6 max-w-2xl text-base leading-8 text-[color:var(--ink-soft)] sm:text-lg">
-              Each service is built around clean prep, considered shaping, and long-wear
-              results that elevate your everyday routine.
+              {ui.servicesDescription}
             </p>
           </div>
 
@@ -350,10 +505,10 @@ export default function Home() {
       <section className="px-6 pb-16 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-7xl rounded-[2rem] border border-[color:var(--line)] bg-white/75 p-6 shadow-[0_14px_36px_rgba(183,115,129,0.06)] sm:p-8">
           <h2 className="mb-6 text-center font-[family:var(--font-cormorant)] text-4xl font-semibold text-[color:var(--accent-deep)] sm:text-5xl">
-            Testimonials
+            {ui.testimonialsHeading}
           </h2>
           <div className="grid gap-4 lg:grid-cols-2">
-          {testimonials.map((item, index) => (
+          {localizedTestimonials.map((item, index) => (
             <blockquote
               key={item.name}
               className={`rounded-xl border p-4 sm:p-5 ${
@@ -389,14 +544,13 @@ export default function Home() {
         <div className="mx-auto max-w-7xl rounded-[2.75rem] border border-white/80 bg-[linear-gradient(145deg,_#c98395,_#d798a5_45%,_#f1dbe2_100%)] p-8 text-white shadow-[0_28px_80px_rgba(183,115,129,0.16)] sm:p-10 lg:flex lg:items-end lg:justify-between lg:gap-10">
           <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/75">
-              Bookings
+              {ui.bookingsLabel}
             </p>
             <h2 className="mt-4 font-[family:var(--font-cormorant)] text-5xl leading-tight font-semibold sm:text-6xl">
-              Stay polished. Stay effortless.
+              {ui.contactHeadline}
             </h2>
             <p className="mt-5 text-base leading-8 text-white/85 sm:text-lg">
-              Tuesday to Saturday appointments, bespoke consultations, and treatment plans
-              built around your schedule.
+              {ui.contactDescription}
             </p>
           </div>
 
@@ -405,7 +559,7 @@ export default function Home() {
               href="tel:+440000000000"
               className="rounded-full bg-white px-6 py-4 text-center font-semibold uppercase tracking-[0.18em] text-[color:var(--accent-deep)] hover:-translate-y-0.5"
             >
-              Call 00 0000 0000
+              {ui.callLabel}
             </a>
             <a
               href="mailto:hello@barbarastudio.co.uk"
@@ -413,6 +567,43 @@ export default function Home() {
             >
               hello@barbarastudio.co.uk
             </a>
+            <div className="mt-1 flex items-center justify-center gap-3 sm:justify-start">
+              <a
+                href="mailto:hello@barbarastudio.co.uk"
+                aria-label={ui.emailAria}
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/35 text-white transition hover:-translate-y-0.5 hover:bg-white/12"
+              >
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
+                  <rect x="3.5" y="6.5" width="17" height="11" rx="2.2" stroke="currentColor" strokeWidth="1.8" />
+                  <path d="M4.5 8l7.5 5.8L19.5 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label={ui.instagramAria}
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/35 text-white transition hover:-translate-y-0.5 hover:bg-white/12"
+              >
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
+                  <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" strokeWidth="1.8" />
+                  <circle cx="12" cy="12" r="4.1" stroke="currentColor" strokeWidth="1.8" />
+                  <circle cx="17.2" cy="6.8" r="1.2" fill="currentColor" />
+                </svg>
+              </a>
+              <a
+                href="https://wa.me/440000000000"
+                target="_blank"
+                rel="noreferrer"
+                aria-label={ui.whatsappAria}
+                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/35 text-white transition hover:-translate-y-0.5 hover:bg-white/12"
+              >
+                <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
+                  <path d="M12 4.2C7.9 4.2 4.6 7.4 4.6 11.4c0 1.7.6 3.2 1.6 4.4l-.9 3.3 3.4-.9c1.1.8 2.3 1.2 3.8 1.2 4.1 0 7.4-3.2 7.4-7.2S16.1 4.2 12 4.2Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+                  <path d="M9.3 9.4c.2-.4.4-.4.6-.4h.5c.2 0 .4 0 .5.3l.8 1.9c.1.2.1.4 0 .5l-.4.5c-.1.1-.2.3-.1.4.2.4.6.9 1.1 1.3.6.5 1.2.9 1.8 1.1.2.1.3 0 .4-.1l.6-.7c.1-.1.3-.2.5-.1l1.8.8c.2.1.3.2.3.4v.5c0 .2 0 .4-.3.6-.5.3-1.1.5-1.7.4-1-.2-2-.7-3.4-1.9-1.3-1.2-2-2.4-2.2-3.4-.1-.6 0-1.2.3-1.7Z" fill="currentColor" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </section>
