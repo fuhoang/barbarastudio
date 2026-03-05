@@ -6,7 +6,7 @@ export function ContactSection({ ui }: { ui: UiCopy }) {
       id="contact"
       className="px-6 pb-16 sm:px-10 lg:px-16"
     >
-      <div className="mx-auto max-w-7xl rounded-[2.75rem] border border-white/80 bg-[linear-gradient(145deg,_#c98395,_#d798a5_45%,_#f1dbe2_100%)] p-8 text-white shadow-[0_28px_80px_rgba(183,115,129,0.16)] sm:p-10 lg:flex lg:items-end lg:justify-between lg:gap-10">
+      <div className="mx-auto max-w-7xl rounded-[2.75rem] border border-[color:var(--line)] bg-[linear-gradient(145deg,_#c98395,_#d798a5_45%,_#f1dbe2_100%)] p-8 text-white shadow-[0_28px_80px_rgba(183,115,129,0.16)] sm:p-10 lg:flex lg:items-end lg:justify-between lg:gap-10">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/75">
             {ui.bookingsLabel}
