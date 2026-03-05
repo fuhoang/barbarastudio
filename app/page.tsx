@@ -129,6 +129,16 @@ export default function Home() {
         "My brows stay clean and lifted, and the finish always looks soft rather than overdone.",
       name: "Nadia",
     },
+    {
+      quote:
+        "My lash set lasted beautifully and still felt light, soft, and comfortable every day.",
+      name: "Sofia",
+    },
+    {
+      quote:
+        "The nail shape and finish were flawless, and the whole appointment felt private and relaxing.",
+      name: "Mila",
+    },
   ];
 
   return (
@@ -339,25 +349,28 @@ export default function Home() {
 
       <section className="px-6 pb-16 sm:px-10 lg:px-16">
         <div className="mx-auto max-w-7xl rounded-[2rem] border border-[color:var(--line)] bg-white/75 p-6 shadow-[0_14px_36px_rgba(183,115,129,0.06)] sm:p-8">
-          <div className="grid gap-5 lg:grid-cols-2">
+          <h2 className="mb-6 text-center font-[family:var(--font-cormorant)] text-4xl font-semibold text-[color:var(--accent-deep)] sm:text-5xl">
+            Testimonials
+          </h2>
+          <div className="grid gap-4 lg:grid-cols-2">
           {testimonials.map((item, index) => (
             <blockquote
               key={item.name}
-              className={`rounded-xl border p-5 sm:p-6 ${
+              className={`rounded-xl border p-4 sm:p-5 ${
                 index === 0
                   ? "border-[color:var(--line)]"
                   : "border-[color:var(--accent)]/35"
               }`}
             >
               <p
-                className={`font-[family:var(--font-cormorant)] text-4xl leading-tight italic sm:text-5xl ${
+                className={`font-[family:var(--font-cormorant)] text-2xl leading-tight italic sm:text-3xl ${
                   index === 0 ? "text-[color:var(--foreground)]" : "text-[color:var(--accent-deep)]"
                 }`}
               >
                 “{item.quote}”
               </p>
               <footer
-                className={`mt-6 text-sm font-semibold uppercase tracking-[0.28em] ${
+                className={`mt-5 text-xs font-semibold uppercase tracking-[0.24em] ${
                   index === 0 ? "text-[color:var(--muted)]" : "text-[color:var(--accent-deep)]/75"
                 }`}
               >
