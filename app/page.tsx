@@ -232,6 +232,52 @@ export default function Home() {
       ]
     : testimonials;
 
+  const BrandLogo = ({ compact = false }: { compact?: boolean }) => (
+    <div className={`inline-flex items-center ${compact ? "gap-2.5" : "gap-3.5"}`}>
+      <span
+        className={`inline-flex items-center justify-center rounded-full border border-[color:var(--line)] bg-white ${
+          compact ? "h-8 w-8" : "h-10 w-10"
+        }`}
+      >
+        <svg
+          viewBox="0 0 64 64"
+          className={compact ? "h-5 w-5" : "h-6 w-6"}
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M32 52c7-6 12-12 12-19 0-5-4-8-8-8-2 0-4 .8-5.5 2.3L32 29l-2.5-1.7C28 25.8 26 25 24 25c-4 0-8 3-8 8 0 7 5 13 16 19Z"
+            fill="#f4d6de"
+            stroke="#b67381"
+            strokeWidth="1.8"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M32 29c1.7-2.5 4.6-4 8-4 1.5 0 2.8.3 4 .9M32 29c-1.7-2.5-4.6-4-8-4-1.5 0-2.8.3-4 .9"
+            stroke="#d798a5"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+          <path
+            d="M32 29v23M32 44c-2.8-1.5-5.5-3.5-7.5-5.8M32 44c2.8-1.5 5.5-3.5 7.5-5.8"
+            stroke="#b67381"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+        </svg>
+      </span>
+      <span
+        className={`font-[family:var(--font-cormorant)] text-[color:var(--accent-deep)] ${
+          compact
+            ? "text-sm font-medium tracking-[0.14em]"
+            : "text-[1.05rem] font-medium tracking-[0.16em]"
+        }`}
+      >
+        Barbara Studio
+      </span>
+    </div>
+  );
+
   return (
     <main className="relative overflow-hidden">
       <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.92),_transparent_34%),radial-gradient(circle_at_85%_20%,_rgba(244,238,233,0.9),_transparent_30%),linear-gradient(135deg,_#faf7f5_0%,_#f7f2ee_46%,_#f3eeea_100%)]" />
@@ -256,9 +302,7 @@ export default function Home() {
       <section className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 pb-12 pt-6 sm:px-10 lg:px-16">
         <header className="flex flex-wrap items-center justify-between gap-4 border-b border-[color:var(--line)] pb-5">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.35em] text-[color:var(--muted)]">
-              Barbara Studio
-            </p>
+            <BrandLogo />
             <p className="mt-1 text-sm text-[color:var(--ink-soft)]">
               {ui.brandSubtitle}
             </p>
@@ -309,9 +353,8 @@ export default function Home() {
 
               <div className="relative grid gap-8 lg:grid-cols-[1fr_0.95fr] lg:items-center">
                 <div>
-                  <div className="inline-flex items-center gap-2 rounded-full border border-[color:var(--line)] bg-white px-4 py-2 text-xs font-medium uppercase tracking-[0.24em] text-[color:var(--muted)]">
-                    <span className="inline-block h-2 w-2 rounded-full bg-[color:var(--accent)]" />
-                    Barbara Studio
+                  <div className="inline-flex items-center rounded-full border border-[color:var(--line)] bg-white px-3 py-2">
+                    <BrandLogo compact />
                   </div>
                   <BlurText
                     text={ui.heroHeadline}
