@@ -12,7 +12,7 @@ concurrency:
 
 jobs:
   deploy:
-    name: Deploy to Vercel
+    name: Test and Deploy to Vercel
     runs-on: ubuntu-latest
     if: ${{ github.ref == 'refs/heads/main' }}
     steps:
@@ -48,6 +48,10 @@ jobs:
       - name: Install dependencies
         if: steps.vercel_secrets.outputs.has_secrets == 'true'
         run: npm ci
+
+      - name: Unit tests
+        if: steps.vercel_secrets.outputs.has_secrets == 'true'
+        run: npm run test
 
       - name: Pull Vercel environment
         if: steps.vercel_secrets.outputs.has_secrets == 'true'
