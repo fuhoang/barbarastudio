@@ -46,7 +46,7 @@ export function SiteHeader({ ui, language, setLanguage }: SiteHeaderProps) {
         </a>
         <a
           href="#contact"
-          className="rounded-full border border-[color:var(--line)] px-4 py-2 hover:border-[color:var(--accent)] hover:bg-white/60"
+          className="rounded-full border border-[color:var(--line)] px-4 py-2 hover:border-[color:var(--line)] hover:bg-white/60"
         >
           {ui.navBookNow}
         </a>
@@ -82,7 +82,7 @@ export function SiteHeader({ ui, language, setLanguage }: SiteHeaderProps) {
             <a
               href="#services"
               onClick={() => setIsMenuOpen(false)}
-              className="rounded-full border border-[color:var(--line)] px-4 py-2 text-center hover:border-[color:var(--accent)]"
+              className="rounded-full border border-[color:var(--line)] px-4 py-2 text-center hover:border-[color:var(--line)]"
             >
               {ui.navServices}
             </a>

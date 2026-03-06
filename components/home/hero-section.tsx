@@ -46,7 +46,7 @@ export function HeroSection({ ui }: { ui: UiCopy }) {
 
           <div className="rounded-2xl border border-[color:var(--line)] bg-white/85 p-4">
             <div className="grid gap-4 sm:grid-cols-2">
-              <figure className="rounded-2xl border border-[color:var(--line)] bg-[#fff7f9] p-4 transition hover:-translate-y-1 hover:border-[color:var(--accent)] hover:bg-white hover:shadow-[0_12px_26px_rgba(183,115,129,0.16)]">
+              <figure className="rounded-2xl border border-[color:var(--line)] bg-[#fff7f9] p-4 transition hover:-translate-y-1 hover:border-[color:var(--line)] hover:bg-white hover:shadow-[0_12px_26px_rgba(183,115,129,0.16)]">
                 <svg viewBox="0 0 160 110" className="h-28 w-full" aria-label="Lashes illustration">
                   <path d="M22 74 Q80 34 138 74" fill="none" stroke="#b67381" strokeWidth="3" strokeLinecap="round" />
                   <path d="M40 70 L33 58" stroke="#d798a5" strokeWidth="2.4" strokeLinecap="round" />
@@ -61,7 +61,7 @@ export function HeroSection({ ui }: { ui: UiCopy }) {
                 </figcaption>
               </figure>
 
-              <figure className="rounded-2xl border border-[color:var(--line)] bg-white p-4 transition hover:-translate-y-1 hover:border-[color:var(--accent)] hover:shadow-[0_12px_26px_rgba(183,115,129,0.16)]">
+              <figure className="rounded-2xl border border-[color:var(--line)] bg-white p-4 transition hover:-translate-y-1 hover:border-[color:var(--line)] hover:shadow-[0_12px_26px_rgba(183,115,129,0.16)]">
                 <svg viewBox="0 0 160 110" className="h-28 w-full" aria-label="Nails illustration">
                   <rect x="20" y="35" width="25" height="48" rx="12" fill="#f5dce3" stroke="#d798a5" strokeWidth="2" />
                   <rect x="50" y="28" width="25" height="55" rx="12" fill="#f2cfd9" stroke="#d798a5" strokeWidth="2" />
@@ -74,7 +74,7 @@ export function HeroSection({ ui }: { ui: UiCopy }) {
                 </figcaption>
               </figure>
 
-              <figure className="rounded-2xl border border-[color:var(--line)] bg-[#fff7f9] p-4 transition hover:-translate-y-1 hover:border-[color:var(--accent)] hover:bg-white hover:shadow-[0_12px_26px_rgba(183,115,129,0.16)]">
+              <figure className="rounded-2xl border border-[color:var(--line)] bg-[#fff7f9] p-4 transition hover:-translate-y-1 hover:border-[color:var(--line)] hover:bg-white hover:shadow-[0_12px_26px_rgba(183,115,129,0.16)]">
                 <svg viewBox="0 0 160 110" className="h-28 w-full" aria-label="Hair illustration">
                   <path d="M35 95 Q28 55 48 28 Q66 8 88 18 Q112 30 126 56 Q134 72 128 95" fill="#f2cfd9" stroke="#d798a5" strokeWidth="2.4" />
                   <path d="M60 42 Q74 58 72 94" fill="none" stroke="#b67381" strokeWidth="2.2" strokeLinecap="round" />
@@ -86,7 +86,7 @@ export function HeroSection({ ui }: { ui: UiCopy }) {
                 </figcaption>
               </figure>
 
-              <figure className="rounded-2xl border border-[color:var(--line)] bg-white p-4 transition hover:-translate-y-1 hover:border-[color:var(--accent)] hover:shadow-[0_12px_26px_rgba(183,115,129,0.16)]">
+              <figure className="rounded-2xl border border-[color:var(--line)] bg-white p-4 transition hover:-translate-y-1 hover:border-[color:var(--line)] hover:shadow-[0_12px_26px_rgba(183,115,129,0.16)]">
                 <svg viewBox="0 0 160 110" className="h-28 w-full" aria-label="Eyebrows illustration">
                   <path d="M22 58 Q48 34 74 52" fill="none" stroke="#b67381" strokeWidth="4" strokeLinecap="round" />
                   <path d="M86 52 Q112 34 138 58" fill="none" stroke="#b67381" strokeWidth="4" strokeLinecap="round" />
