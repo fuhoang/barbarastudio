@@ -28,7 +28,7 @@ export function ContactSection({ ui }: { ui: UiCopy }) {
           </a>
           <a
             href="mailto:Barbaracolmenares4@gmail.com"
-            className="rounded-full border border-white/30 px-6 py-4 text-center font-semibold uppercase tracking-[0.18em] text-white hover:-translate-y-0.5 hover:bg-white/10"
+            className="rounded-full border border-[color:var(--line)] px-6 py-4 text-center font-semibold uppercase tracking-[0.18em] text-white hover:-translate-y-0.5 hover:bg-white/10"
           >
             Barbaracolmenares4@gmail.com
           </a>
@@ -36,7 +36,7 @@ export function ContactSection({ ui }: { ui: UiCopy }) {
             <a
               href="mailto:Barbaracolmenares4@gmail.com"
               aria-label={ui.emailAria}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/35 text-white transition hover:-translate-y-0.5 hover:bg-white/12"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--line)] text-white transition hover:-translate-y-0.5 hover:bg-white/12"
             >
               <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
                 <rect x="3.5" y="6.5" width="17" height="11" rx="2.2" stroke="currentColor" strokeWidth="1.8" />
@@ -48,7 +48,7 @@ export function ContactSection({ ui }: { ui: UiCopy }) {
               target="_blank"
               rel="noreferrer"
               aria-label={ui.instagramAria}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/35 text-white transition hover:-translate-y-0.5 hover:bg-white/12"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--line)] text-white transition hover:-translate-y-0.5 hover:bg-white/12"
             >
               <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
                 <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" strokeWidth="1.8" />
@@ -61,7 +61,7 @@ export function ContactSection({ ui }: { ui: UiCopy }) {
               target="_blank"
               rel="noreferrer"
               aria-label={ui.whatsappAria}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/35 text-white transition hover:-translate-y-0.5 hover:bg-white/12"
+              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--line)] text-white transition hover:-translate-y-0.5 hover:bg-white/12"
             >
               <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">
                 <path d="M12 4.2C7.9 4.2 4.6 7.4 4.6 11.4c0 1.7.6 3.2 1.6 4.4l-.9 3.3 3.4-.9c1.1.8 2.3 1.2 3.8 1.2 4.1 0 7.4-3.2 7.4-7.2S16.1 4.2 12 4.2Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />

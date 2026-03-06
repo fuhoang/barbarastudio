@@ -19,7 +19,7 @@ export function TestimonialsSection({ ui, testimonials }: TestimonialsSectionPro
               className={`rounded-xl border p-4 sm:p-5 ${
                 index === 0
                   ? "border-[color:var(--line)]"
-                  : "border-[color:var(--accent)]/35"
+                  : "border-[color:var(--line)]"
               }`}
             >
               <p
