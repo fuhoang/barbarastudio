@@ -1,17 +1,5 @@
 import type { Metadata } from "next";
-import { Belleza, DM_Sans } from "next/font/google";
 import "./globals.css";
-
-const bodyFont = DM_Sans({
-  variable: "--font-dm-sans",
-  subsets: ["latin"],
-});
-
-const displayFont = Belleza({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["400"],
-});
 
 export const metadata: Metadata = {
   title: "Barbara Studio | Lashes, Brows & Nails",
@@ -51,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${bodyFont.variable} ${displayFont.variable} antialiased`}>
+      <body className="antialiased">
         {children}
       </body>
     </html>

@@ -10,6 +10,8 @@
   --accent: #d798a5;
   --accent-deep: #b67381;
   --ink-soft: #6b6b6b;
+  --font-dm-sans: "DM Sans", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --font-cormorant: "Times New Roman", Georgia, "Times New Roman", serif;
 }
 
 @theme inline {
