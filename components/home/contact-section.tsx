@@ -4,6 +4,8 @@ export function ContactSection({ ui }: { ui: UiCopy }) {
   return (
     <section
       id="contact"
+      aria-labelledby="contact-heading"
+      role="region"
       className="px-6 pb-16 sm:px-10 lg:px-16"
     >
       <div className="mx-auto max-w-7xl rounded-[2.75rem] border border-[color:var(--line)] bg-[linear-gradient(145deg,_#c98395,_#d798a5_45%,_#f1dbe2_100%)] p-8 text-white shadow-[0_28px_80px_rgba(183,115,129,0.16)] sm:p-10 lg:flex lg:items-end lg:justify-between lg:gap-10">
@@ -11,7 +13,10 @@ export function ContactSection({ ui }: { ui: UiCopy }) {
           <p className="text-xs font-semibold uppercase tracking-[0.35em] text-white/75">
             {ui.bookingsLabel}
           </p>
-          <h2 className="mt-4 font-[family:var(--font-cormorant)] text-5xl leading-tight font-semibold sm:text-6xl">
+          <h2
+            id="contact-heading"
+            className="mt-4 font-[family:var(--font-cormorant)] text-5xl leading-tight font-semibold sm:text-6xl"
+          >
             {ui.contactHeadline}
           </h2>
           <p className="mt-5 text-base leading-8 text-white/85 sm:text-lg">
@@ -21,13 +26,15 @@ export function ContactSection({ ui }: { ui: UiCopy }) {
 
         <div className="mt-8 flex flex-col gap-3 text-sm sm:max-w-sm lg:mt-0 lg:min-w-80">
           <a
-            href="tel:04241257083"
+            href="tel:+584241257083"
+            aria-label={ui.callLabel}
             className="rounded-full bg-white px-6 py-4 text-center font-semibold uppercase tracking-[0.18em] text-[color:var(--accent-deep)] hover:-translate-y-0.5"
           >
             {ui.callLabel}
           </a>
           <a
             href="mailto:Barbaracolmenares4@gmail.com"
+            aria-label={ui.emailAria}
             className="rounded-full border border-[color:var(--line)] px-6 py-4 text-center font-semibold uppercase tracking-[0.18em] text-white hover:-translate-y-0.5 hover:bg-white/10"
           >
             Barbaracolmenares4@gmail.com
@@ -35,7 +42,7 @@ export function ContactSection({ ui }: { ui: UiCopy }) {
           <div className="mt-1 flex items-center justify-center gap-3 sm:justify-start">
             <a
               href="mailto:Barbaracolmenares4@gmail.com"
-              aria-label={ui.emailAria}
+              aria-label={ui.emailIconAria}
               className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[color:var(--line)] text-white transition hover:-translate-y-0.5 hover:bg-white/12"
             >
               <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" aria-hidden="true">

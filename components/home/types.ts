@@ -4,6 +4,7 @@ export type UiCopy = {
   brandSubtitle: string;
   navServices: string;
   navBookNow: string;
+  skipToContent: string;
   heroHeadline: string;
   heroParagraphOne: string;
   heroParagraphTwo: string;
@@ -22,6 +23,7 @@ export type UiCopy = {
   contactDescription: string;
   callLabel: string;
   emailAria: string;
+  emailIconAria: string;
   instagramAria: string;
   whatsappAria: string;
 };
