@@ -163,7 +163,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: new URL("/opengraph-image.png", resolvedSiteUrl),
+        url: new URL("/opengraph-image", resolvedSiteUrl),
         width: 1200,
         height: 630,
         alt: "Ilustración de tratamientos de belleza de Barbara Studio",
@@ -175,7 +175,7 @@ export const metadata: Metadata = {
     title: "Barbara Studio | Pestañas, Cejas y Uñas",
     description:
       "Tratamientos estéticos de belleza con enfoque en pestañas, cejas y uñas para un acabado natural, preciso y luminoso.",
-    images: [new URL("/opengraph-image.png", resolvedSiteUrl)],
+    images: [new URL("/opengraph-image", resolvedSiteUrl)],
   },
 };
 

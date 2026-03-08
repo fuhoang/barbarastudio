@@ -77,7 +77,7 @@ export async function generateMetadata({
       type: "website",
       images: [
         {
-          url: new URL("/opengraph-image.png", resolvedSiteUrl),
+          url: new URL("/opengraph-image", resolvedSiteUrl),
           width: 1200,
           height: 630,
           alt:
@@ -91,7 +91,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: seoText.twitterTitle,
       description: seoText.twitterDescription,
-      images: [new URL("/opengraph-image.png", resolvedSiteUrl)],
+      images: [new URL("/opengraph-image", resolvedSiteUrl)],
     },
   };
 }
