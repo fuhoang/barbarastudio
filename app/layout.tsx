@@ -17,7 +17,7 @@ const seoStructuredData = {
   image: `${resolvedSiteUrl.origin}/beauty-salon-illustration.svg`,
   description:
     "Tratamientos estéticos de belleza con enfoque en pestañas, cejas y uñas, con acabados naturales, precisos y duraderos.",
-  url: `${resolvedSiteUrl.origin}/`,
+  url: `${resolvedSiteUrl.origin}/es`,
   telephone: "+584241257083",
   email: "Barbaracolmenares4@gmail.com",
   areaServed: {
@@ -63,10 +63,11 @@ export const metadata: Metadata = {
     "Tratamientos estéticos de belleza con enfoque en pestañas, cejas y uñas para un acabado natural, preciso y luminoso.",
   metadataBase: resolvedSiteUrl,
   alternates: {
-    canonical: resolvedSiteUrl.origin,
+    canonical: `${resolvedSiteUrl.origin}/es`,
     languages: {
-      "es-ES": "/",
-      "en-US": "/",
+      "es-ES": "/es",
+      "en-US": "/en",
+      "x-default": "/es",
     },
   },
   robots: {
@@ -96,7 +97,7 @@ export const metadata: Metadata = {
     title: "Barbara Studio | Pestañas, Cejas y Uñas",
     description:
       "Tratamientos estéticos de belleza con enfoque en pestañas, cejas y uñas para un acabado natural, preciso y luminoso.",
-    url: resolvedSiteUrl.origin,
+    url: `${resolvedSiteUrl.origin}/es`,
     siteName: "Barbara Studio",
     locale: "es_ES",
     type: "website",

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import DotGrid from "@/components/DotGrid";
 import type { Language } from "@/components/home/types";
 import { ContactSection } from "@/components/home/contact-section";
@@ -15,36 +15,27 @@ type HomeViewProps = {
   initialLanguage: Language;
 };
 
-function normalizeLanguage(value: string | null): Language {
+function normalizeLanguage(value: string): Language {
   return value === "en" ? "en" : "es";
 }
 
 export function HomeView({ initialLanguage }: HomeViewProps) {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
+  const pathLanguage = normalizeLanguage(pathname.startsWith("/en") ? "en" : "es");
   const [language, setLanguage] = useState<Language>(initialLanguage);
 
   useEffect(() => {
-    setLanguage(normalizeLanguage(searchParams.get("lang")));
-  }, [searchParams]);
+    setLanguage(pathLanguage);
+  }, [pathLanguage]);
 
   const ui = uiByLanguage[language];
   const localizedServiceCategories = serviceCategoriesByLanguage[language];
   const localizedTestimonials = testimonialsByLanguage[language];
 
   const changeLanguage = (nextLanguage: Language) => {
-    const nextParams = new URLSearchParams(searchParams.toString());
     document.cookie = `barbara-lang=${nextLanguage}; Path=/; Max-Age=${60 * 60 * 24 * 180}; SameSite=Lax`;
-
-    if (nextLanguage === "es") {
-      nextParams.delete("lang");
-    } else {
-      nextParams.set("lang", "en");
-    }
-
-    const query = nextParams.toString();
-    const nextUrl = `${pathname}${query ? `?${query}` : ""}`;
+    const nextUrl = `/${nextLanguage}`;
     setLanguage(nextLanguage);
     router.replace(nextUrl, { scroll: false });
   };
