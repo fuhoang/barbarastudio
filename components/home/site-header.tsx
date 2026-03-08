@@ -13,21 +13,41 @@ type SiteHeaderProps = {
 export function SiteHeader({ ui, language, onLanguageChange }: SiteHeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navLabel =
-    language === "en" ? "Primary navigation" : "Navegación principal";
+    language === "en"
+      ? "Primary navigation"
+      : language === "es"
+        ? "Navegación principal"
+        : "Navegação principal";
   const languageLabel =
-    language === "en" ? "Language selector" : "Selector de idioma";
+    language === "en"
+      ? "Language selector"
+      : language === "es"
+        ? "Selector de idioma"
+        : "Seletor de idioma";
   const menuLabel =
     language === "en"
       ? "Toggle mobile menu"
-      : "Alternar menú móvil";
+      : language === "es"
+        ? "Alternar menú móvil"
+        : "Alternar menu mobile";
   const langEnLabel =
     language === "en"
       ? "English selected"
-      : "Switch to English";
+      : language === "es"
+        ? "Switch to English"
+        : "Mudar para Inglês";
   const langEsLabel =
     language === "en"
       ? "Switch to Spanish"
-      : "Español seleccionado";
+      : language === "es"
+        ? "Español seleccionado"
+        : "Mudar para Espanhol";
+  const langPtLabel =
+    language === "en"
+      ? "Switch to Portuguese"
+      : language === "es"
+        ? "Mudar para Português"
+        : "Português selecionado";
 
   return (
     <header className="flex flex-wrap items-center justify-between gap-4 border-b border-[color:var(--line)] pb-5">
@@ -70,7 +90,7 @@ export function SiteHeader({ ui, language, onLanguageChange }: SiteHeaderProps) 
         >
           {ui.navBookNow}
         </a>
-        <div className="ml-1 inline-flex rounded-full border border-[color:var(--line)] bg-white p-1">
+          <div className="ml-1 inline-flex rounded-full border border-[color:var(--line)] bg-white p-1">
           <span className="sr-only">{languageLabel}</span>
           <button
             type="button"
@@ -93,13 +113,26 @@ export function SiteHeader({ ui, language, onLanguageChange }: SiteHeaderProps) 
             className={`rounded-full px-3 py-1 text-xs font-semibold tracking-[0.12em] ${
               language === "es"
                 ? "bg-[color:var(--accent-deep)] text-white"
-                : "text-[color:var(--ink-soft)]"
+              : "text-[color:var(--ink-soft)]"
             }`}
           >
             ES
           </button>
-        </div>
-      </nav>
+            <button
+              type="button"
+              onClick={() => onLanguageChange("pt")}
+              aria-pressed={language === "pt"}
+              aria-label={langPtLabel}
+              className={`rounded-full px-3 py-1 text-xs font-semibold tracking-[0.12em] ${
+                language === "pt"
+                  ? "bg-[color:var(--accent-deep)] text-white"
+                  : "text-[color:var(--ink-soft)]"
+              }`}
+            >
+              PT
+            </button>
+          </div>
+        </nav>
 
       {isMenuOpen ? (
         <nav
@@ -148,6 +181,19 @@ export function SiteHeader({ ui, language, onLanguageChange }: SiteHeaderProps) 
                 }`}
               >
                 ES
+              </button>
+              <button
+                type="button"
+                onClick={() => onLanguageChange("pt")}
+                aria-pressed={language === "pt"}
+                aria-label={langPtLabel}
+                className={`rounded-full px-3 py-1 text-xs font-semibold tracking-[0.12em] ${
+                  language === "pt"
+                    ? "bg-[color:var(--accent-deep)] text-white"
+                    : "text-[color:var(--ink-soft)]"
+                }`}
+              >
+                PT
               </button>
             </div>
           </div>

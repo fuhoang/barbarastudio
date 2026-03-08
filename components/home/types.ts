@@ -1,4 +1,4 @@
-export type Language = "en" | "es";
+export type Language = "en" | "es" | "pt";
 
 export type UiCopy = {
   brandSubtitle: string;

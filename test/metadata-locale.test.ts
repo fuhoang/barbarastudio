@@ -23,6 +23,7 @@ describe("localized metadata", () => {
     expect(metadata.alternates?.languages).toMatchObject({
       "es-ES": "/es",
       "en-US": "/en",
+      "pt-BR": "/pt",
       "x-default": "/es",
     });
     expect(metadata.openGraph?.locale).toBe("es_ES");
@@ -42,6 +43,23 @@ describe("localized metadata", () => {
       "x-default": "/es",
     });
     expect(metadata.openGraph?.locale).toBe("en_US");
+    expect(getImageUrl(metadata.openGraph?.images?.[0]?.url)).toContain("/opengraph-image");
+    expect(metadata.twitter?.images?.[0]).toBeDefined();
+  });
+
+  it("returns Portuguese (Brazil) metadata with locale-specific SEO fields", async () => {
+    const metadata = await generateMetadata({ params: Promise.resolve({ lang: "pt" }) });
+
+    expect(metadata.title?.default).toBe("Barbara Studio | Cílios, Sobrancelhas e Unhas");
+    expect(metadata.description).toContain("cílios");
+    expect(metadata.alternates?.canonical).toBe("/pt");
+    expect(metadata.alternates?.languages).toMatchObject({
+      "es-ES": "/es",
+      "en-US": "/en",
+      "pt-BR": "/pt",
+      "x-default": "/es",
+    });
+    expect(metadata.openGraph?.locale).toBe("pt_BR");
     expect(getImageUrl(metadata.openGraph?.images?.[0]?.url)).toContain("/opengraph-image");
     expect(metadata.twitter?.images?.[0]).toBeDefined();
   });

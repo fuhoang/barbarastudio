@@ -16,13 +16,18 @@ type HomeViewProps = {
 };
 
 function normalizeLanguage(value: string): Language {
-  return value === "en" ? "en" : "es";
+  if (value === "en" || value === "pt") {
+    return value;
+  }
+  return "es";
 }
 
 export function HomeView({ initialLanguage }: HomeViewProps) {
   const router = useRouter();
   const pathname = usePathname();
-  const pathLanguage = normalizeLanguage(pathname.startsWith("/en") ? "en" : "es");
+  const pathLanguage = normalizeLanguage(
+    pathname.startsWith("/en") ? "en" : pathname.startsWith("/pt") ? "pt" : "es"
+  );
   const language = pathLanguage ?? initialLanguage;
   const [reducedMotion, setReducedMotion] = useState(false);
 
