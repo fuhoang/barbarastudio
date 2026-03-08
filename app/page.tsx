@@ -1,50 +1,111 @@
-"use client";
-
-import { useState } from "react";
-import DotGrid from "@/components/DotGrid";
-import { ContactSection } from "@/components/home/contact-section";
-import { HeroSection } from "@/components/home/hero-section";
-import { serviceCategoriesByLanguage, testimonialsByLanguage, uiByLanguage } from "@/components/home/content";
-import { ServicesSection } from "@/components/home/services-section";
-import { SiteHeader } from "@/components/home/site-header";
-import { TestimonialsSection } from "@/components/home/testimonials-section";
+import type { Metadata } from "next";
+import { HomeView } from "@/components/home/home-view";
 import type { Language } from "@/components/home/types";
 
-export default function Home() {
-  const [language, setLanguage] = useState<Language>("es");
-  const ui = uiByLanguage[language];
-  const localizedServiceCategories = serviceCategoriesByLanguage[language];
-  const localizedTestimonials = testimonialsByLanguage[language];
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
 
-  return (
-    <main className="relative overflow-hidden">
-      <div className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_top_left,_rgba(255,255,255,0.92),_transparent_34%),radial-gradient(circle_at_85%_20%,_rgba(244,238,233,0.9),_transparent_30%),linear-gradient(135deg,_#faf7f5_0%,_#f7f2ee_46%,_#f3eeea_100%)]" />
-      <DotGrid
-        className="!absolute inset-0 -z-10 opacity-30 pointer-events-none"
-        dotSize={4}
-        gap={20}
-        baseColor="#efd8df"
-        activeColor="#d798a5"
-        proximity={140}
-        speedTrigger={70}
-        shockRadius={180}
-        shockStrength={2.8}
-        maxSpeed={2500}
-        resistance={900}
-        returnDuration={1.2}
-      />
-      <div className="absolute left-[-8rem] top-28 -z-10 h-72 w-72 rounded-full bg-white/45 blur-3xl" />
-      <div className="absolute right-[-7rem] top-[34rem] -z-10 h-80 w-80 rounded-full bg-[#f1e8e2]/70 blur-3xl" />
-      <div className="absolute inset-x-0 top-[42rem] -z-10 h-px bg-[linear-gradient(90deg,transparent,rgba(107,107,107,0.12),transparent)]" />
+const resolvedSiteUrl = new URL(siteUrl);
 
-      <section className="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 pb-12 pt-6 sm:px-10 lg:px-16">
-        <SiteHeader ui={ui} language={language} setLanguage={setLanguage} />
-        <HeroSection ui={ui} />
-      </section>
+type PageSearchParams = {
+  lang?: string | string[];
+};
 
-      <ServicesSection ui={ui} categories={localizedServiceCategories} />
-      <TestimonialsSection ui={ui} testimonials={localizedTestimonials} />
-      <ContactSection ui={ui} />
-    </main>
-  );
+const metadataByLanguage = {
+  es: {
+    title: "Barbara Studio | Pestañas, Cejas y Uñas",
+    description:
+      "Tratamientos estéticos de belleza con enfoque en pestañas, cejas y uñas para un acabado natural, preciso y luminoso.",
+    locale: "es_ES",
+    ogTitle: "Barbara Studio | Pestañas, Cejas y Uñas",
+    ogDescription:
+      "Tratamientos estéticos de belleza con enfoque en pestañas, cejas y uñas para un acabado natural, preciso y luminoso.",
+    twitterTitle: "Barbara Studio | Pestañas, Cejas y Uñas",
+    twitterDescription:
+      "Tratamientos estéticos de belleza con enfoque en pestañas, cejas y uñas para un acabado natural, preciso y luminoso.",
+  },
+  en: {
+    title: "Barbara Studio | Lashes, Brows & Nails",
+    description:
+      "Aesthetic beauty treatments with a focus on lashes, brows, and nails for a natural, precise, and luminous look.",
+    locale: "en_US",
+    ogTitle: "Barbara Studio | Lashes, Brows & Nails",
+    ogDescription:
+      "Aesthetic beauty treatments with a focus on lashes, brows, and nails for a natural, precise, and luminous look.",
+    twitterTitle: "Barbara Studio | Lashes, Brows & Nails",
+    twitterDescription:
+      "Aesthetic beauty treatments with a focus on lashes, brows, and nails for a natural, precise, and luminous look.",
+  },
+};
+
+function normalizeLanguage(value: string | string[] | undefined): Language {
+  const langValue = Array.isArray(value) ? value[0] : value;
+  return langValue === "en" ? "en" : "es";
+}
+
+function getLanguageFromParams(searchParams: PageSearchParams | undefined): Language {
+  return normalizeLanguage(searchParams?.lang);
+}
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<PageSearchParams>;
+}): Promise<Metadata> {
+  const params = await searchParams;
+  const language = getLanguageFromParams(params);
+  const seoText = metadataByLanguage[language];
+  const canonical = language === "en" ? "/?lang=en" : "/";
+
+  return {
+    title: {
+      default: seoText.title,
+      template: "%s | Barbara Studio",
+    },
+    description: seoText.description,
+    alternates: {
+      canonical: canonical,
+      languages: {
+        "es-ES": "/",
+        "en-US": "/?lang=en",
+        "x-default": "/",
+      },
+    },
+    openGraph: {
+      title: seoText.ogTitle,
+      description: seoText.ogDescription,
+      locale: seoText.locale,
+      url: `${resolvedSiteUrl.origin}${canonical}`,
+      siteName: "Barbara Studio",
+      type: "website",
+      images: [
+        {
+          url: new URL("/opengraph-image.png", resolvedSiteUrl),
+          width: 1200,
+          height: 630,
+          alt: language === "en"
+            ? "Barbara Studio beauty treatments illustration"
+            : "Ilustración de tratamientos de belleza de Barbara Studio",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: seoText.twitterTitle,
+      description: seoText.twitterDescription,
+      images: [new URL("/opengraph-image.png", resolvedSiteUrl)],
+    },
+  };
+}
+
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<PageSearchParams>;
+}) {
+  const resolvedParams = await searchParams;
+  const language = getLanguageFromParams(resolvedParams);
+
+  return <HomeView initialLanguage={language} />;
 }

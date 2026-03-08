@@ -13,12 +13,14 @@ export function HeroSection({ ui }: { ui: UiCopy }) {
             <div className="inline-flex items-center rounded-full border border-[color:var(--line)] bg-white px-3 py-2">
               <BrandLogo compact />
             </div>
-            <BlurText
-              text={ui.heroHeadline}
-              animateBy="words"
-              delay={180}
-              className="mx-auto mt-7 max-w-2xl justify-center text-center font-[family:var(--font-cormorant)] text-6xl leading-[0.92] font-bold tracking-tight text-[color:var(--accent-deep)] sm:text-7xl"
-            />
+            <h1 className="mx-auto mt-7 max-w-2xl text-center">
+              <BlurText
+                text={ui.heroHeadline}
+                animateBy="words"
+                delay={180}
+                className="justify-center font-[family:var(--font-cormorant)] text-6xl leading-[0.92] font-bold tracking-tight text-[color:var(--accent-deep)] sm:text-7xl"
+              />
+            </h1>
             <div className="mx-auto mt-6 max-w-3xl">
               <p className="text-center text-base leading-8 text-[color:var(--ink-soft)]">
                 {ui.heroParagraphOne}

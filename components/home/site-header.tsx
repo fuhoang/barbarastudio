@@ -7,10 +7,10 @@ import type { Language, UiCopy } from "@/components/home/types";
 type SiteHeaderProps = {
   ui: UiCopy;
   language: Language;
-  setLanguage: (language: Language) => void;
+  onLanguageChange: (language: Language) => void;
 };
 
-export function SiteHeader({ ui, language, setLanguage }: SiteHeaderProps) {
+export function SiteHeader({ ui, language, onLanguageChange }: SiteHeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -53,7 +53,7 @@ export function SiteHeader({ ui, language, setLanguage }: SiteHeaderProps) {
         <div className="ml-1 inline-flex rounded-full border border-[color:var(--line)] bg-white p-1">
           <button
             type="button"
-            onClick={() => setLanguage("en")}
+            onClick={() => onLanguageChange("en")}
             className={`rounded-full px-3 py-1 text-xs font-semibold tracking-[0.12em] ${
               language === "en"
                 ? "bg-[color:var(--accent-deep)] text-white"
@@ -64,7 +64,7 @@ export function SiteHeader({ ui, language, setLanguage }: SiteHeaderProps) {
           </button>
           <button
             type="button"
-            onClick={() => setLanguage("es")}
+            onClick={() => onLanguageChange("es")}
             className={`rounded-full px-3 py-1 text-xs font-semibold tracking-[0.12em] ${
               language === "es"
                 ? "bg-[color:var(--accent-deep)] text-white"
@@ -96,7 +96,7 @@ export function SiteHeader({ ui, language, setLanguage }: SiteHeaderProps) {
             <div className="inline-flex self-center rounded-full border border-[color:var(--line)] bg-white p-1">
               <button
                 type="button"
-                onClick={() => setLanguage("en")}
+                onClick={() => onLanguageChange("en")}
                 className={`rounded-full px-3 py-1 text-xs font-semibold tracking-[0.12em] ${
                   language === "en"
                     ? "bg-[color:var(--accent-deep)] text-white"
@@ -107,7 +107,7 @@ export function SiteHeader({ ui, language, setLanguage }: SiteHeaderProps) {
               </button>
               <button
                 type="button"
-                onClick={() => setLanguage("es")}
+                onClick={() => onLanguageChange("es")}
                 className={`rounded-full px-3 py-1 text-xs font-semibold tracking-[0.12em] ${
                   language === "es"
                     ? "bg-[color:var(--accent-deep)] text-white"
