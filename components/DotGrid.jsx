@@ -41,7 +41,8 @@ const DotGrid = ({
   resistance = 750,
   returnDuration = 1.5,
   className = '',
-  style = {}
+  style = {},
+  ariaHidden = true,
 }) => {
   const wrapperRef = useRef(null);
   const canvasRef = useRef(null);
@@ -259,9 +260,18 @@ const DotGrid = ({
   }, [maxSpeed, speedTrigger, proximity, resistance, returnDuration, shockRadius, shockStrength]);
 
   return (
-    <section className={`dot-grid ${className}`} style={style}>
+    <section
+      className={`dot-grid ${className}`}
+      style={style}
+      aria-hidden={ariaHidden}
+      role={ariaHidden ? "presentation" : undefined}
+    >
       <div ref={wrapperRef} className="dot-grid__wrap">
-        <canvas ref={canvasRef} className="dot-grid__canvas" />
+        <canvas
+          ref={canvasRef}
+          className="dot-grid__canvas"
+          aria-hidden={ariaHidden}
+        />
       </div>
     </section>
   );
