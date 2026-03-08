@@ -283,6 +283,7 @@ export const uiByLanguage: Record<Language, UiCopy> = {
     brandSubtitle: "Tratamientos de belleza estética",
     navServices: "Servicios",
     navBookNow: "Reservar",
+    skipToContent: "Saltar al contenido",
     heroHeadline: "El Arte de la belleza",
     heroParagraphOne:
       "La belleza es el arte de realzar lo que ya está presente: perfilar, definir e iluminar los rasgos naturales con intención y cuidado.",
@@ -305,6 +306,7 @@ export const uiByLanguage: Record<Language, UiCopy> = {
       "Citas de martes a sábado, consultas personalizadas y planes de tratamiento adaptados a tu agenda.",
     callLabel: "Llamar 04241257083",
     emailAria: "Correo",
+    emailIconAria: "Icono de correo",
     instagramAria: "Instagram",
     whatsappAria: "WhatsApp",
   },
@@ -312,6 +314,7 @@ export const uiByLanguage: Record<Language, UiCopy> = {
     brandSubtitle: "Aesthetic beauty treatments",
     navServices: "Services",
     navBookNow: "Book now",
+    skipToContent: "Skip to content",
     heroHeadline: "The Art of beauty",
     heroParagraphOne:
       "Beauty is the art of enhancing what is already there — refining, shaping, and illuminating natural features with intention and care.",
@@ -334,6 +337,7 @@ export const uiByLanguage: Record<Language, UiCopy> = {
       "Tuesday to Saturday appointments, bespoke consultations, and treatment plans built around your schedule.",
     callLabel: "Call 04241257083",
     emailAria: "Email",
+    emailIconAria: "Email icon",
     instagramAria: "Instagram",
     whatsappAria: "WhatsApp",
   },

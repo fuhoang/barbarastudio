@@ -8,6 +8,8 @@
     "build:turbopack": "next build --turbo",
     "start": "next start",
     "lint": "eslint",
+    "a11y": "node scripts/accessibility-guard.mjs",
+    "a11y:ci": "npm run lint && npm run test && npm run a11y",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage"
