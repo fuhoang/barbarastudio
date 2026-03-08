@@ -107,7 +107,7 @@ const seoStructuredData = {
       "@id": `${resolvedSiteUrl.origin}/#website`,
       name: "Barbara Studio",
       url: `${resolvedSiteUrl.origin}`,
-      inLanguage: ["es", "en"],
+      inLanguage: ["es", "en", "pt"],
     },
     ...serviceSchema,
   ],
@@ -126,6 +126,7 @@ export const metadata: Metadata = {
     languages: {
       "es-ES": "/es",
       "en-US": "/en",
+      "pt-BR": "/pt",
       "x-default": "/es",
     },
   },

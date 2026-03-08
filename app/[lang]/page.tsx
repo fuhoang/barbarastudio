@@ -22,6 +22,18 @@ const metadataByLanguage = {
     twitterDescription:
       "Tratamientos estéticos de belleza con enfoque en pestañas, cejas y uñas para un acabado natural, preciso y luminoso.",
   },
+  pt: {
+    title: "Barbara Studio | Cílios, Sobrancelhas e Unhas",
+    description:
+      "Tratamentos estéticos de beleza com foco em cílios, sobrancelhas e unhas para um acabamento natural, preciso e luminoso.",
+    locale: "pt_BR",
+    ogTitle: "Barbara Studio | Cílios, Sobrancelhas e Unhas",
+    ogDescription:
+      "Tratamentos estéticos de beleza com foco em cílios, sobrancelhas e unhas para um acabamento natural, preciso e luminoso.",
+    twitterTitle: "Barbara Studio | Cílios, Sobrancelhas e Unhas",
+    twitterDescription:
+      "Tratamentos estéticos de beleza com foco em cílios, sobrancelhas e unhas para um acabamento natural, preciso e luminoso.",
+  },
   en: {
     title: "Barbara Studio | Lashes, Brows & Nails",
     description:
@@ -37,11 +49,14 @@ const metadataByLanguage = {
 };
 
 function normalizeLanguage(value: string): Language {
-  return value === "en" ? "en" : "es";
+  if (value === "en" || value === "pt") {
+    return value;
+  }
+  return "es";
 }
 
 export function generateStaticParams() {
-  return [{ lang: "es" }, { lang: "en" }];
+  return [{ lang: "es" }, { lang: "en" }, { lang: "pt" }];
 }
 
 export async function generateMetadata({
@@ -65,6 +80,7 @@ export async function generateMetadata({
       languages: {
         "es-ES": "/es",
         "en-US": "/en",
+        "pt-BR": "/pt",
         "x-default": "/es",
       },
     },
@@ -82,7 +98,9 @@ export async function generateMetadata({
           height: 630,
           alt:
             language === "en"
-              ? "Barbara Studio beauty treatments illustration"
+            ? "Barbara Studio beauty treatments illustration"
+            : language === "pt"
+              ? "Ilustração de tratamentos de beleza da Barbara Studio"
               : "Ilustración de tratamientos de belleza de Barbara Studio",
         },
       ],
@@ -103,7 +121,7 @@ export default async function Home({
 }) {
   const { lang } = await params;
 
-  if (lang !== "en" && lang !== "es") {
+  if (lang !== "en" && lang !== "es" && lang !== "pt") {
     redirect("/es");
   }
 

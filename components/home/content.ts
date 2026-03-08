@@ -229,6 +229,120 @@ export const serviceCategoriesByLanguage: Record<Language, ServiceCategory[]> = 
       ],
     },
   ],
+  pt: [
+    {
+      title: "Serviços de Unhas",
+      illustration: "/illustrations/nails-service.svg",
+      illustrationAlt: "Ilustração de serviço de unhas",
+      groups: [
+        {
+          name: "Manicure",
+          items: [
+            "Manicure clássica",
+            "Manicure russa (manicure de precisão a seco)",
+            "Manicure em gel",
+            "Aplicação de BIAB / gel construtor",
+            "Manicure spa de luxo",
+          ],
+        },
+        {
+          name: "Extensões e Melhorias",
+          items: [
+            "Extensões de gel",
+            "Extensões acrílicas",
+            "Extensões de polygel",
+            "Extensões esculpidas",
+            "Reequilíbrio / reforço (infills)",
+          ],
+        },
+        {
+          name: "Design e Acabamento",
+          items: [
+            "Ponta francesa",
+            "Baby boomer (ombré)",
+            "Acabamento cromado / efeito brilho",
+            "Nail art (básica)",
+            "Nail art (avançada / design personalizado)",
+            "Nail art 3D",
+            "Acessórios Swarovski / cristais",
+          ],
+        },
+        {
+          name: "Remoção e Reparo",
+          items: [
+            "Remoção de gel",
+            "Remoção de acrílico",
+            "Reparo (por unha)",
+            "Soak off + mini manicure",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Serviços de Sobrancelha",
+      illustration: "/illustrations/eyebrow-service.svg",
+      illustrationAlt: "Ilustração de serviço de sobrancelhas",
+      groups: [
+        {
+          name: "Modelagem e Aparo",
+          items: [
+            "Modelagem de sobrancelha (cera ou fio)",
+            "Penteado",
+            "Limpeza de sobrancelhas",
+          ],
+        },
+        {
+          name: "Pigmentação e Definição",
+          items: ["Coloração de sobrancelhas", "Coloração híbrida", "Sobrancelha com henna"],
+        },
+        {
+          name: "Estilo Avançado",
+          items: [
+            "Laminação de sobrancelhas",
+            "Laminação + coloração",
+            "Laminação + modelagem + coloração (escultura completa)",
+          ],
+        },
+        {
+          name: "Serviços de Realce",
+          items: [
+            "Mapeamento de sobrancelhas",
+            "Correção de sobrancelhas",
+            "Consulta para restauração de sobrancelhas",
+          ],
+        },
+      ],
+    },
+    {
+      title: "Serviços de Cílios",
+      illustration: "/illustrations/eyelash-service.svg",
+      illustrationAlt: "Ilustração de serviço de cílios",
+      groups: [
+        {
+          name: "Extensões de Cílios",
+          items: [
+            "Set completo clássico",
+            "Set completo híbrido",
+            "Set completo volume",
+            "Set completo mega volume",
+            "Set estilo wispy / Kim K",
+          ],
+        },
+        {
+          name: "Manutenção",
+          items: ["Manutenção de 2 semanas", "Manutenção de 3 semanas", "Remoção de cílios"],
+        },
+        {
+          name: "Realce Natural",
+          items: ["Lift de cílios", "Lift + coloração", "Coloração do cílio inferior"],
+        },
+        {
+          name: "Extras",
+          items: ["Banho de cílios", "Kit de cuidados pós atendimento"],
+        },
+      ],
+    },
+  ],
 };
 
 export const testimonialsByLanguage: Record<Language, Testimonial[]> = {
@@ -276,6 +390,28 @@ export const testimonialsByLanguage: Record<Language, Testimonial[]> = {
       name: "Mila",
     },
   ],
+  pt: [
+    {
+      quote:
+        "Tudo fica impecável, calmo e cheio de atenção aos detalhes do início ao fim.",
+      name: "Ava",
+    },
+    {
+      quote:
+        "Meus cílios continuam definidos e elevados, com acabamento suave e discreto, nunca exagerado.",
+      name: "Nadia",
+    },
+    {
+      quote:
+        "Meu alongamento de cílios durou lindamente e permaneceu leve, macio e confortável todos os dias.",
+      name: "Sofia",
+    },
+    {
+      quote:
+        "O formato e o acabamento das minhas unhas ficaram impecáveis, e toda a consulta foi tranquila e acolhedora.",
+      name: "Mila",
+    },
+  ],
 };
 
 export const uiByLanguage: Record<Language, UiCopy> = {
@@ -307,6 +443,37 @@ export const uiByLanguage: Record<Language, UiCopy> = {
     callLabel: "Llamar 04241257083",
     emailAria: "Correo",
     emailIconAria: "Icono de correo",
+    instagramAria: "Instagram",
+    whatsappAria: "WhatsApp",
+  },
+  pt: {
+    brandSubtitle: "Tratamentos estéticos de beleza",
+    navServices: "Serviços",
+    navBookNow: "Agendar",
+    skipToContent: "Pular para o conteúdo",
+    heroHeadline: "A Arte da Beleza",
+    heroParagraphOne:
+      "A beleza é a arte de valorizar o que já existe: definir, modelar e iluminar os traços naturais com intenção e cuidado.",
+    heroParagraphTwo:
+      "Com precisão, equilíbrio e suavidade, uma beleza verdadeira gera confiança que parece natural e inteira.",
+    heroBookNow: "Agendar",
+    heroViewServices: "Ver serviços",
+    lashesLabel: "Cílios",
+    nailsLabel: "Unhas",
+    hairLabel: "Cabelo",
+    browsLabel: "Sobrancelhas",
+    treatmentsLabel: "Tratamentos",
+    servicesHeadline: "Beleza detalhada, adaptada ao seu rosto.",
+    servicesDescription:
+      "Cada serviço é criado com preparo impecável, modelagem precisa e acabamento duradouro para elevar sua rotina diária.",
+    testimonialsHeading: "Depoimentos",
+    bookingsLabel: "Agendamentos",
+    contactHeadline: "Brilhe impecavelmente. Sinta-se natural.",
+    contactDescription:
+      "Atendimentos de terça a sábado, consultas personalizadas e planos de tratamento ajustados à sua agenda.",
+    callLabel: "Ligar 04241257083",
+    emailAria: "E-mail",
+    emailIconAria: "Ícone de e-mail",
     instagramAria: "Instagram",
     whatsappAria: "WhatsApp",
   },
