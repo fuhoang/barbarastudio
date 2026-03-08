@@ -45,6 +45,112 @@ button {
     color 180ms ease;
 }
 
+.brand-logo-enter {
+  animation: brand-logo-enter 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.rose-mark {
+  transform-origin: 50% 56%;
+  transform-box: fill-box;
+  opacity: 0;
+  animation: rose-bloom-wrap 1.05s cubic-bezier(0.18, 1.05, 0.25, 1) 0.04s both;
+}
+
+.rose-bloom-wrap {
+  transform-origin: 50% 58%;
+  transform-box: fill-box;
+  transform: translateY(-18px) scale(0.5);
+  animation: rose-bloom-wrap 1.05s cubic-bezier(0.18, 1.05, 0.25, 1) 0.1s both;
+}
+
+.rose-mark .rose-petal {
+  transform-origin: 50% 52%;
+  transform-box: fill-box;
+  transform: scale(0.02) rotate(-52deg) translateY(8px);
+  opacity: 0;
+  animation: rose-petal 1.1s cubic-bezier(0.16, 1.15, 0.28, 1) 0.32s both;
+}
+
+.rose-mark .rose-stem {
+  transform-origin: 50% 58%;
+  transform-box: fill-box;
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  opacity: 0;
+  animation: rose-stem 1.1s cubic-bezier(0.16, 1.1, 0.3, 1) 0.85s both;
+}
+
+@keyframes brand-logo-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.95);
+  }
+
+  70% {
+    opacity: 1;
+    transform: translateY(3px) scale(1.03);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes rose-petal {
+  0% {
+    opacity: 0;
+    transform: scale(0.02) rotate(-52deg) translateY(8px);
+  }
+
+  55% {
+    opacity: 1;
+    transform: scale(1.35) rotate(8deg) translateY(-2px);
+  }
+
+  78% {
+    transform: scale(0.97) rotate(-3deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@keyframes rose-bloom-wrap {
+  0% {
+    opacity: 0;
+    transform: scale(0.45) rotate(-14deg) translateY(-22px);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale(1.2) rotate(6deg) translateY(3px);
+  }
+
+  78% {
+    transform: scale(0.95) rotate(-2.5deg) translateY(-2px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg) translateY(0);
+  }
+}
+
+@keyframes rose-stem {
+  0% {
+    stroke-dashoffset: 220;
+    opacity: 0;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
 ::selection {
   background: rgba(215, 152, 165, 0.24);
   color: var(--foreground);
