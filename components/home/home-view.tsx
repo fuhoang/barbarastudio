@@ -23,7 +23,7 @@ export function HomeView({ initialLanguage }: HomeViewProps) {
   const router = useRouter();
   const pathname = usePathname();
   const pathLanguage = normalizeLanguage(pathname.startsWith("/en") ? "en" : "es");
-  const [language, setLanguage] = useState<Language>(initialLanguage);
+  const language = pathLanguage ?? initialLanguage;
   const [reducedMotion, setReducedMotion] = useState(false);
 
   useEffect(() => {
@@ -35,7 +35,6 @@ export function HomeView({ initialLanguage }: HomeViewProps) {
   }, []);
 
   useEffect(() => {
-    setLanguage(pathLanguage);
     document.documentElement.lang = pathLanguage;
   }, [pathLanguage]);
 
@@ -46,7 +45,6 @@ export function HomeView({ initialLanguage }: HomeViewProps) {
   const changeLanguage = (nextLanguage: Language) => {
     const nextUrl = `/${nextLanguage}`;
     document.documentElement.lang = nextLanguage;
-    setLanguage(nextLanguage);
     router.replace(nextUrl, { scroll: false });
   };
 
