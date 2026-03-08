@@ -9,49 +9,109 @@ const siteUrl =
 
 const resolvedSiteUrl = new URL(siteUrl);
 
+const serviceSchema = [
+  {
+    "@type": "Service",
+    name: "Lashes",
+    serviceType: "Servicios de pestañas",
+    description:
+      "Extensiones, limpiezas, lifting y mantenimiento para resultados ligeros y naturales.",
+    areaServed: {
+      "@type": "Country",
+      name: "Venezuela",
+    },
+  },
+  {
+    "@type": "Service",
+    name: "Brows",
+    serviceType: "Servicios de cejas",
+    description:
+      "Diseño, laminación y tintura de cejas para una forma definida y armoniosa.",
+    areaServed: {
+      "@type": "Country",
+      name: "Venezuela",
+    },
+  },
+  {
+    "@type": "Service",
+    name: "Nails",
+    serviceType: "Servicios de uñas",
+    description:
+      "Manicura, tratamientos de gel y extensiones con acabados detallados y duraderos.",
+    areaServed: {
+      "@type": "Country",
+      name: "Venezuela",
+    },
+  },
+];
+
 const seoStructuredData = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "@id": `${resolvedSiteUrl.origin}/#beauty-studio`,
-  name: "Barbara Studio",
-  image: `${resolvedSiteUrl.origin}/beauty-salon-illustration.svg`,
-  description:
-    "Tratamientos estéticos de belleza con enfoque en pestañas, cejas y uñas, con acabados naturales, precisos y duraderos.",
-  url: `${resolvedSiteUrl.origin}/es`,
-  telephone: "+584241257083",
-  email: "Barbaracolmenares4@gmail.com",
-  areaServed: {
-    "@type": "Country",
-    name: "Venezuela",
-  },
-  priceRange: "$$",
-  currenciesAccepted: "USD",
-  paymentAccepted: "Cash, Credit Card",
-  openingHours: "Tu-Sa 09:00-20:00",
-  openingHoursSpecification: [
+  "@graph": [
     {
-      "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-      opens: "09:00",
-      closes: "20:00",
+      "@type": "LocalBusiness",
+      "@id": `${resolvedSiteUrl.origin}/#beauty-studio`,
+      name: "Barbara Studio",
+      image: `${resolvedSiteUrl.origin}/beauty-salon-illustration.svg`,
+      description:
+        "Tratamientos estéticos de belleza con enfoque en pestañas, cejas y uñas, con acabados naturales, precisos y duraderos.",
+      url: `${resolvedSiteUrl.origin}/es`,
+      telephone: "+584241257083",
+      email: "Barbaracolmenares4@gmail.com",
+      areaServed: {
+        "@type": "Country",
+        name: "Venezuela",
+      },
+      priceRange: "$$",
+      currenciesAccepted: "USD",
+      paymentAccepted: "Cash, Credit Card",
+      openingHours: "Tu-Sa 09:00-20:00",
+      openingHoursSpecification: [
+        {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          opens: "09:00",
+          closes: "20:00",
+        },
+      ],
+      sameAs: ["https://www.instagram.com/Barbyeal.studio"],
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Carabobo",
+        addressRegion: "Valencia",
+        addressCountry: "VE",
+      },
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: "10.1621",
+        longitude: "-68.0077",
+      },
+      makesOffer: serviceSchema.map((service) => ({
+        "@type": "Offer",
+        itemOffered: service,
+      })),
     },
+    {
+      "@type": "Organization",
+      "@id": `${resolvedSiteUrl.origin}/#organization`,
+      name: "Barbara Studio",
+      url: `${resolvedSiteUrl.origin}/`,
+      logo: `${resolvedSiteUrl.origin}/beauty-salon-illustration.svg`,
+      description:
+        "Salón de belleza especializado en tratamientos estéticos de pestañas, cejas y uñas.",
+      email: "Barbaracolmenares4@gmail.com",
+      telephone: "+584241257083",
+      sameAs: ["https://www.instagram.com/Barbyeal.studio"],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${resolvedSiteUrl.origin}/#website`,
+      name: "Barbara Studio",
+      url: `${resolvedSiteUrl.origin}`,
+      inLanguage: ["es", "en"],
+    },
+    ...serviceSchema,
   ],
-  sameAs: ["https://www.instagram.com/Barbyeal.studio"],
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Carabobo",
-    addressRegion: "Valencia",
-    addressCountry: "VE",
-  },
-  geo: {
-    "@type": "GeoCoordinates",
-    latitude: "10.1621",
-    longitude: "-68.0077",
-  },
-  makesOffer: {
-    "@type": "Service",
-    serviceType: "Tratamientos de belleza",
-  },
 };
 
 export const metadata: Metadata = {
