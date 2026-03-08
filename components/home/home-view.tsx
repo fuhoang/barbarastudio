@@ -35,6 +35,7 @@ export function HomeView({ initialLanguage }: HomeViewProps) {
 
   const changeLanguage = (nextLanguage: Language) => {
     const nextParams = new URLSearchParams(searchParams.toString());
+    document.cookie = `barbara-lang=${nextLanguage}; Path=/; Max-Age=${60 * 60 * 24 * 180}; SameSite=Lax`;
 
     if (nextLanguage === "es") {
       nextParams.delete("lang");

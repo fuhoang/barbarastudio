@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { cookies } from "next/headers";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
@@ -19,13 +20,33 @@ const seoStructuredData = {
   url: `${resolvedSiteUrl.origin}/`,
   telephone: "+584241257083",
   email: "Barbaracolmenares4@gmail.com",
-  areaServed: "Venezuela",
+  areaServed: {
+    "@type": "Country",
+    name: "Venezuela",
+  },
   priceRange: "$$",
+  currenciesAccepted: "USD",
+  paymentAccepted: "Cash, Credit Card",
   openingHours: "Tu-Sa 09:00-20:00",
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
+      closes: "20:00",
+    },
+  ],
   sameAs: ["https://www.instagram.com/Barbyeal.studio"],
   address: {
     "@type": "PostalAddress",
+    addressLocality: "Carabobo",
+    addressRegion: "Valencia",
     addressCountry: "VE",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: "10.1621",
+    longitude: "-68.0077",
   },
   makesOffer: {
     "@type": "Service",
@@ -97,13 +118,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const language = cookieStore.get("barbara-lang")?.value === "en" ? "en" : "es";
+
   return (
-    <html lang="es">
+    <html lang={language}>
       <body className="antialiased">
         <script
           id="structured-data-beauty-studio"
