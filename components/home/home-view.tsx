@@ -27,6 +27,7 @@ export function HomeView({ initialLanguage }: HomeViewProps) {
 
   useEffect(() => {
     setLanguage(pathLanguage);
+    document.documentElement.lang = pathLanguage;
   }, [pathLanguage]);
 
   const ui = uiByLanguage[language];
@@ -34,8 +35,8 @@ export function HomeView({ initialLanguage }: HomeViewProps) {
   const localizedTestimonials = testimonialsByLanguage[language];
 
   const changeLanguage = (nextLanguage: Language) => {
-    document.cookie = `barbara-lang=${nextLanguage}; Path=/; Max-Age=${60 * 60 * 24 * 180}; SameSite=Lax`;
     const nextUrl = `/${nextLanguage}`;
+    document.documentElement.lang = nextLanguage;
     setLanguage(nextLanguage);
     router.replace(nextUrl, { scroll: false });
   };

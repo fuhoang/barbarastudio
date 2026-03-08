@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { cookies } from "next/headers";
 import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
@@ -179,16 +178,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const cookieStore = await cookies();
-  const language = cookieStore.get("barbara-lang")?.value === "en" ? "en" : "es";
-
   return (
-    <html lang={language}>
+    <html lang="es">
       <body className="antialiased">
         <script
           id="structured-data-beauty-studio"
